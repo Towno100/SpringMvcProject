@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stored Greetings</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<!-- Bootstrap links -->
+	<link th:href="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css}" rel="stylesheet"/>
+	<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js}"></script>
+	<script th:src="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
+	
+
+	</head>
+<body>
+	<div class = "container">
+		<h1>Stored Greetings</h1>
+		
+		<table class = "table table-bordered table-hover">
+			<tr>
+				<th>Receiver</th>
+				<th>Message</th>
+				<th>Sender</th>
+			</tr>
+			<tr th:each="greet : ${greetings}">
+				<td th:text = "${greet.receiver}" />
+				<td th:text = "${greet.message}" />
+				<td th:text = "${greet.sender}" />
+			</tr>
+		</table> 
+		
+		<p>
+			<a href="/greet_form" class = "text-muted">Submit another message</a>
+		</p>
+		<p>
+			<a href="/home" class = "text-muted">Home page</a>
+		</p>
+	</div>
+</body>
+</html>

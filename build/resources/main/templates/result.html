@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Greeting Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<!-- Bootstrap links -->
+	<link th:href="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css}" rel="stylesheet"/>
+	<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js}"></script>
+	<script th:src="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
+	
+</head>
+<body>
+	<div class = "container">
+		<h1>Result</h1>
+		<p th:text="'To: ' + ${greeting.receiver}" />
+		<p th:text="'Message: ' + ${greeting.message}" />
+		<p th:text="'From: ' + ${greeting.sender}" />
+		<p><a href="/greet_form">Submit another message</a></p> 
+		<p><a href="/show_greetings">See all messages</a></p>   
+		<p><a href="/home">Home page</a></p>
+		
+	</div>
+</body>
+</html>

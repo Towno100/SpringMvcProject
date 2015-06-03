@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring MVC Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<!-- Bootstrap links -->
+	<link th:href="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css}" rel="stylesheet"/>
+	<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js}"></script>
+	<script th:src="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
+	 
+</head>
+<body>
+	<div class = "container">
+		<h1 class = "text-center">Spring MVC Greetings Application <small>- by Charles Lord</small></h1>
+		<div class = "list-group">
+			<a class="list-group-item" th:href = "@{/greeting}">Task 2 - A simple greeting application.</a>
+			<a class="list-group-item" th:href = "@{/greet_form}">Task 4 - Customize your greetings - Greetings stored for later retrieval</a>
+			<a class="list-group-item" th:href = "@{/get_greeting}">Bonus Task 1 - A greeting REST interface.</a>
+			<a class="list-group-item" th:href = "@{/show_greetings}">Bonus Task 2 - See all greetings submitted from Task 4</a>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-sm-4">
+				<h4>Customize Task 2</h4>
+				<form role = "form" action = "/greeting" method = "get">
+					<div class = "form-group">
+						<input class = "form-control" type = "text" name = "name" placeholder = "Enter name"/>
+					</div>
+					<div class = "form-group">
+						<button type = "submit" class = "btn btn-default">Submit</button>
+					</div>
+				</form>
+			</div>
+			
+			<div class = "col-sm-4">
+				<h4>Task 3 - International Greetings</h4>
+				<form role = "form" action = "/test" method = "get">
+					<div class = "form-group">
+						<input class = "form-control" type = "text" name = "name" placeholder = "Enter name"/>
+					</div>
+					
+					<div class = "form-group">
+						<p>Select the language you wish to be greeted in</p>
+						<label class="radio-inline"><input type="radio" name="language" value = "English"/>English</label>
+						<label class="radio-inline"><input type="radio" name="language" value = "Japanese"/>Japanese</label>
+						<label class="radio-inline"><input type="radio" name="language" value = "French"/>French</label>
+					</div>
+					
+					<div class = "form-group">
+						<p>Select the time of day</p>
+						<label class="radio-inline"><input type="radio" name="time" value = "Morning"/>Morning</label>
+						<label class="radio-inline"><input type="radio" name="time" value = "Afternoon"/>Afternoon</label>
+						<label class="radio-inline"><input type="radio" name="time" value = "Evening"/>Evening</label>
+					</div>
+					
+					<div class = "form-group">
+						<button type = "submit" class = "btn btn-default">Submit</button>
+					</div>
+				</form>
+			</div>
+			
+			<div class = "col-sm-4">
+				<h4>Customize Bonus Task 1</h4>
+				<form role = "form" action = "/get_greeting" method = "get">
+					<div class = "form-group">
+						<input class = "form-control" type = "text" name = "name" placeholder = "Enter name"/>
+					</div>
+					<div class = "form-group">
+						<button type = "submit" class = "btn btn-default">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>
